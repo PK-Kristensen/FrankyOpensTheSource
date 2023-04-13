@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
 import BlockchainButton from './BlockchainButton';
 import styled from 'styled-components';
