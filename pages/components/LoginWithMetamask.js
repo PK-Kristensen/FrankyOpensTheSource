@@ -1,5 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Web3 from 'web3';
+import BlockchainButton from './BlockchainButton';
+import styled from 'styled-components';
+
+const AccountText = styled.p`
+  font-size: 16px;
+  font-weight: 600;
+  margin: 16px 0;
+`;
 
 const LoginWithMetamask = () => {
   const [account, setAccount] = useState('');
@@ -30,16 +38,15 @@ const LoginWithMetamask = () => {
 
   return (
     <div>
-      <p>
+      <AccountText>
         {account
           ? `Connected to MetaMask with account: ${account}`
           : 'Connect to MetaMask to continue'}
-      </p>
+      </AccountText>
       {!account && (
-        <button onClick={connectToMetamask}>Login with MetaMask</button>
+        <BlockchainButton onClick={connectToMetamask}>Login with MetaMask</BlockchainButton>
       )}
     </div>
   );
-};
 
 export default LoginWithMetamask;
